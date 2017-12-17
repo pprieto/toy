@@ -50,13 +50,14 @@ log.info """\
  */
 genome_file = file(params.genome)
 annotation_file = file(params.annot)
+reads =  "${params.reads}/*_{1,2}.fq"
  
 /*
  * Create the `read_pairs` channel that emits tuples containing three elements:
  * the pair ID, the first read-pair file and the second read-pair file 
  */
 Channel
-    .fromFilePairs( "${params.reads}/*_{1,2}.fq" )
+    .fromFilePairs( reads )
     .ifEmpty { error "Cannot find any reads matching: ${params.reads}" }
     .set { read_pairs } 
  
