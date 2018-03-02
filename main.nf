@@ -30,7 +30,7 @@
  * Defines some parameters in order to specify the refence genomes
  * and read pairs by using the command line options
  */
-params.reads = "$baseDir/data/ggal/fqs/"
+params.reads = "s3://cbcrg-eu/ggal"
 params.annot = "$baseDir/data/ggal/ggal_1_48850000_49020000.bed.gff"
 params.genome = "$baseDir/data/ggal/ggal_1_48850000_49020000.Ggal71.500bpflank.fa"
 params.outdir = 'results'
